@@ -16,12 +16,9 @@ class _MovieApiService implements MovieApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<dynamic>> getMovies(limit, country) async {
+  Future<HttpResponse<dynamic>> getMovies(limit, page) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'limit': limit,
-      r'page': country
-    };
+    final queryParameters = <String, dynamic>{r'limit': limit, r'page': page};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: <String, dynamic>{}, extra: _extra)

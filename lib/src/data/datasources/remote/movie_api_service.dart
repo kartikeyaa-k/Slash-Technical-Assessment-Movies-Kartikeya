@@ -12,6 +12,6 @@ abstract class MovieApiService {
   @GET('/v2/list_movies.json')
   Future<HttpResponse> getMovies(
     @Query("limit") int limit,
-    @Query("page") int country,
+    @Query("page") int page,
   );
 }
