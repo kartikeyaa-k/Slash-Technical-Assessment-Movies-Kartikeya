@@ -1,5 +1,3 @@
-import '../utils/constants.dart';
-
 class MoviesRequestParams {
   final int limit;
   final int page;
