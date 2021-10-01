@@ -1,10 +1,8 @@
-Slash Technical Assessment
+# Slash Technical Assessment - Movies by Kartikeya
 
-A flutter mobile assginement for Slash, developed by Kartikeya Badekar. 
-
+This project is developed for the technical assestment round at Slash using Flutter.
 
 Description : 
-This project is a starting point for a Flutter application.
-This application will run on both iOS and Android. It will have a splash screen, welcome, login page, and a page showcasing movies which will be fetched from an external source using REST interface.
+This application will run on both iOS and Android. It will have a splash, welcome, login screen, and a page showcasing movies which will be fetched from an external source using REST interface.
 
 
