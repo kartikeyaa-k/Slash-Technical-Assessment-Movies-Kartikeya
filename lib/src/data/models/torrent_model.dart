@@ -1,4 +1,4 @@
-class Torrents {
+class TorrentModel {
   String? url;
   String? hash;
   String? quality;
@@ -10,7 +10,7 @@ class Torrents {
   String? dateUploaded;
   int? dateUploadedUnix;
 
-  Torrents(
+  TorrentModel(
       {this.url,
       this.hash,
       this.quality,
@@ -22,7 +22,7 @@ class Torrents {
       this.dateUploaded,
       this.dateUploadedUnix});
 
-  Torrents.fromJson(Map<String, dynamic> json) {
+  TorrentModel.fromJson(Map<String, dynamic> json) {
     url = json['url'];
     hash = json['hash'];
     quality = json['quality'];
@@ -33,20 +33,5 @@ class Torrents {
     sizeBytes = json['size_bytes'];
     dateUploaded = json['date_uploaded'];
     dateUploadedUnix = json['date_uploaded_unix'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['url'] = this.url;
-    data['hash'] = this.hash;
-    data['quality'] = this.quality;
-    data['type'] = this.type;
-    data['seeds'] = this.seeds;
-    data['peers'] = this.peers;
-    data['size'] = this.size;
-    data['size_bytes'] = this.sizeBytes;
-    data['date_uploaded'] = this.dateUploaded;
-    data['date_uploaded_unix'] = this.dateUploadedUnix;
-    return data;
   }
 }

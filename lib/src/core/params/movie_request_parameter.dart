@@ -3,7 +3,7 @@ class MoviesRequestParams {
   final int page;
 
   const MoviesRequestParams({
-    this.limit = 20,
+    this.limit = 10,
     this.page = 1,
   });
 }

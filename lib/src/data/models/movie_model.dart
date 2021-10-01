@@ -1,6 +1,6 @@
 import 'package:slash_assignment_movies/src/data/models/torrent_model.dart';
 
-class Movies {
+class MovieModel {
   int? id;
   String? url;
   String? imdbCode;
@@ -9,7 +9,7 @@ class Movies {
   String? titleLong;
   String? slug;
   int? year;
-  double? rating;
+  String? rating;
   int? runtime;
   List<String>? genres;
   String? summary;
@@ -24,11 +24,11 @@ class Movies {
   String? mediumCoverImage;
   String? largeCoverImage;
   String? state;
-  List<Torrents>? torrents;
+  List<TorrentModel>? torrents;
   String? dateUploaded;
   int? dateUploadedUnix;
 
-  Movies(
+  MovieModel(
       {this.id,
       this.url,
       this.imdbCode,
@@ -56,7 +56,7 @@ class Movies {
       this.dateUploaded,
       this.dateUploadedUnix});
 
-  Movies.fromJson(Map<String, dynamic> json) {
+  MovieModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     url = json['url'];
     imdbCode = json['imdb_code'];
@@ -65,7 +65,7 @@ class Movies {
     titleLong = json['title_long'];
     slug = json['slug'];
     year = json['year'];
-    rating = json['rating'];
+    rating = json['rating'].toString();
     runtime = json['runtime'];
     genres = json['genres'].cast<String>();
     summary = json['summary'];
@@ -83,43 +83,10 @@ class Movies {
     if (json['torrents'] != null) {
       torrents = [];
       json['torrents'].forEach((v) {
-        torrents?.add(Torrents.fromJson(v));
+        torrents?.add(TorrentModel.fromJson(v));
       });
     }
     dateUploaded = json['date_uploaded'];
     dateUploadedUnix = json['date_uploaded_unix'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = this.id;
-    data['url'] = this.url;
-    data['imdb_code'] = this.imdbCode;
-    data['title'] = this.title;
-    data['title_english'] = this.titleEnglish;
-    data['title_long'] = this.titleLong;
-    data['slug'] = this.slug;
-    data['year'] = this.year;
-    data['rating'] = this.rating;
-    data['runtime'] = this.runtime;
-    data['genres'] = this.genres;
-    data['summary'] = this.summary;
-    data['description_full'] = this.descriptionFull;
-    data['synopsis'] = this.synopsis;
-    data['yt_trailer_code'] = this.ytTrailerCode;
-    data['language'] = this.language;
-    data['mpa_rating'] = this.mpaRating;
-    data['background_image'] = this.backgroundImage;
-    data['background_image_original'] = this.backgroundImageOriginal;
-    data['small_cover_image'] = this.smallCoverImage;
-    data['medium_cover_image'] = this.mediumCoverImage;
-    data['large_cover_image'] = this.largeCoverImage;
-    data['state'] = this.state;
-    if (this.torrents != null) {
-      data['torrents'] = this.torrents?.map((v) => v.toJson()).toList();
-    }
-    data['date_uploaded'] = this.dateUploaded;
-    data['date_uploaded_unix'] = this.dateUploadedUnix;
-    return data;
   }
 }
