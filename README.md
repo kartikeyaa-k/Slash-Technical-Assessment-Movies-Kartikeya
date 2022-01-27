@@ -1,4 +1,4 @@
-# Demo Movies by Kartikeya
+# Simple Movies App using REST Api
 
 This project is developed using Flutter.
 
